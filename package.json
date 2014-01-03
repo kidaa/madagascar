@@ -1,0 +1,42 @@
+{
+  "name": "madagascar",
+  "version": "0.1.0",
+  "description": "Madagascar wraps a bulk of HTTP requests, collect the responses and sends them back as one.",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Olapic/madagascar.git"
+  },
+  "keywords": [
+    "restful",
+    "api",
+    "http"
+  ],
+  "author": "Carlos Viglietta <charlie@olapic.com> (https://github.com/charlie22)",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/Olapic/madagascar/LICENSE-MIT"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/Olapic/madagascar/issues"
+  },
+  "devDependencies": {
+    "mocha": "~1.16.2",
+    "chai": "~1.8.1",
+    "validate-arguments": "~0.0.8",
+    "nock": "~0.41.0",
+    "URIjs": "~1.13.2",
+    "underscore-node": "~0.1.2"
+  },
+  "readmeFilename": "README.md",
+  "gitHead": "bdfe8685fa9a4d4bc81fea579d07d74a1ac617b2",
+  "directories": {
+    "test": "test"
+  },
+  "license": "BSD"
+}
