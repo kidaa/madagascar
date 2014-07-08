@@ -22,4 +22,4 @@ var madagascar = require('madagascar');
 
 # License
 
-[LICENSE-MIT](https://github.com/Olapic/madagascar/LICENSE-MIT)
+[LICENSE-MIT](https://github.com/Olapic/madagascar/blob/master/LICENSE-MIT)
