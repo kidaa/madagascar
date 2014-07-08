@@ -19,12 +19,12 @@ module.exports = {
     });
 
     args.headers = _.defaults(args.headers, {
-      Accept: '*/*',
+      'Accept': '*/*',
     });
 
     if (args.data) {
-      args.headers.Content-Type = 'application/x-www-form-urlencoded';
-      args.headers.Content-Length = data.length;
+      args.headers['Content-Type'] = 'application/x-www-form-urlencoded';
+      args.headers['Content-Length'] = data.length;
     }
 
     uri = URI(args.url);
@@ -36,7 +36,6 @@ module.exports = {
       method: args.method,
       headers: args.headers,
     }
-    console.log(options);
 
     req = http.request(options, function(res) {
       var str = '';
