@@ -1,6 +1,6 @@
 #Madagascar
 
-[![Build Status](https://secure.travis-ci.org/olapic/madagascar.png)](http://travis-ci.org/olapic/madagascar)
+[![Build Status](https://travis-ci.org/Olapic/madagascar.svg?branch=master)](https://travis-ci.org/Olapic/madagascar)
 
 Madagascar wraps a bulk of HTTP requests, collect the responses and sends them back as one.
 
