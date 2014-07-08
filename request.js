@@ -24,7 +24,7 @@ module.exports = {
 
     if (args.data) {
       args.headers['Content-Type'] = 'application/x-www-form-urlencoded';
-      args.headers['Content-Length'] = data.length;
+      args.headers['Content-Length'] = args.data.length;
     }
 
     uri = URI(args.url);
