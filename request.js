@@ -1,6 +1,4 @@
-var validateArguments = require('validate-arguments'),
-    http = require('http'),
-    querystring = require('querystring'),
+var http = require('http'),
     URI = require('URIjs'),
     _ = require('underscore-node');
 
