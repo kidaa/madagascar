@@ -1,7 +1,7 @@
 var should = require('chai').should(),
     nock = require("nock"),
     http = require("http"),
-    request = require('../request').request;
+    request = require('../lib/request').request;
 
 describe('#request', function() {
   it('GET /hello responses "Hello World"', function(done) {
