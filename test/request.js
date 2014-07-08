@@ -6,12 +6,12 @@ var should = require('chai').should(),
 describe('#request', function() {
   it('GET /hello responses "Hello World"', function(done) {
 
-    api = nock("https://local.olapic.com")
+    api = nock("http://local.olapic.com")
           .get("/hello")
           .reply(200, "Hello World");
 
     request({
-      url: 'https://local.olapic.com/hello',
+      url: 'http://local.olapic.com/hello',
       method: 'GET',
       finish: function(response){
         response.should.to.equal('Hello World');
