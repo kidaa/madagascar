@@ -16,10 +16,9 @@ describe('#request', function() {
       finish: function(response){
         response.should.to.equal('Hello World');
         done();
-        api.isDone()
+        api.isDone();
       }
     });
   });
-
 
 });

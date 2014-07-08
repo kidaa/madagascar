@@ -35,7 +35,7 @@ module.exports = {
       port: uri.port() || 80,
       method: args.method,
       headers: args.headers,
-    }
+    };
 
     req = http.request(options, function(res) {
       var str = '';
@@ -50,7 +50,7 @@ module.exports = {
     });
 
     req.on('error', function(err) {
-      args.finish(err)
+      args.finish(err);
     });
 
     if (args.data) {
