@@ -16,7 +16,51 @@ $ npm install madagascar
 ```js
 var madagascar = require('madagascar');
 
-// ...
+var payload = {
+  base_url: 'https://api.olapic.com',
+  authentication:
+  {
+    access_token: 'abcdef'
+  }
+  batch: [
+    {
+      url: 'https://api.photorank.me/media',
+      method: 'POST',
+      body: 'caption=%23madagascar&link=http%3A%2F%2Finstagram.com%2Fp%2FqMN-RWKc9U',
+    },
+    {
+      relative_url: '/',
+      headers:
+      {
+        'Accept': 'text/html; q=0.8'
+      }
+      method: 'GET',
+    }
+  ]
+};
+
+madagascar(payload, function(responses){
+  /*
+  response = [
+    {
+      status: 200,
+      headers:
+      {
+        'Content-Type': 'text/javascript; charset=UTF-8'
+      },
+      body: '{\"id\":\"…\"}'
+    },
+    {
+      status: 400,
+      headers:
+      {
+        'Content-Type': 'text/javascript; charset=UTF-8'
+      },
+      body:'{\"error\":\"…\"}'
+    },
+  ];
+  */
+});
 
 ```
 
