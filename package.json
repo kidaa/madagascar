@@ -31,7 +31,8 @@
     "validate-arguments": "~0.0.8",
     "nock": "~0.41.0",
     "URIjs": "~1.13.2",
-    "underscore-node": "~0.1.2"
+    "underscore-node": "~0.1.2",
+    "chai-fuzzy": "~1.4.0"
   },
   "readmeFilename": "README.md",
   "gitHead": "bdfe8685fa9a4d4bc81fea579d07d74a1ac617b2",

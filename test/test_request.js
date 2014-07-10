@@ -1,7 +1,8 @@
-var should = require('chai').should(),
+var chai = require('chai'),
+    should = chai.should(),
     nock = require("nock"),
     http = require("http"),
-    request = require('../lib/request').request;
+    request = require('../lib/request');
 
 describe('#request', function() {
   it('GET /hello responses "Hello World"', function(done) {
@@ -10,11 +11,15 @@ describe('#request', function() {
           .get("/hello")
           .reply(200, "Hello World");
 
-    request({
+    request.send({
       url: 'http://local.olapic.com/hello',
       method: 'GET',
       finish: function(response){
-        response.should.to.equal('Hello World');
+        response.should.to.like({
+          status: 200,
+          headers: {},
+          body: 'Hello World'
+        });
         done();
         api.isDone();
       }
@@ -32,12 +37,16 @@ describe('#request', function() {
         id: '/media/123abc'
       });
 
-    request({
+    request.send({
       url: 'http://local.olapic.com/media',
       method: 'POST',
       body: 'caption=%23madagascar&link=http%3A%2F%2Finstagram.com%2Fp%2FqMN-RWKc9U',
       finish: function(response){
-        response.should.to.equal('{"id":"/media/123abc"}');
+        response.should.to.like({
+          status: 200,
+          headers: {'content-type': 'application/json'},
+          body: '{\"id\":\"/media/123abc\"}'
+        });
         done();
         api.isDone();
       }
