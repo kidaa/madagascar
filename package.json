@@ -36,7 +36,8 @@
   "readmeFilename": "README.md",
   "gitHead": "bdfe8685fa9a4d4bc81fea579d07d74a1ac617b2",
   "directories": {
-    "test": "test"
+    "test": "test",
+    "lib": "lib"
   },
-  "license": "BSD"
+  "license": "MIT"
 }
