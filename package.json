@@ -28,7 +28,6 @@
   "devDependencies": {
     "mocha": "~1.16.2",
     "chai": "~1.8.1",
-    "validate-arguments": "~0.0.8",
     "nock": "~0.41.0",
     "URIjs": "~1.13.2",
     "underscore-node": "~0.1.2",
