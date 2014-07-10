@@ -10,8 +10,7 @@ Madagascar wraps a bulk of HTTP requests, collect the responses and sends them b
 $ npm install madagascar
 ```
 
-# Use
-
+# Usage
 
 ```js
 var madagascar = require('madagascar');
@@ -62,6 +61,31 @@ madagascar(payload, function(responses){
   */
 });
 
+```
+
+#Example
+
+
+```js
+var express = require('express'),
+    madagascar = require('madagascar'),
+    bodyParser = require('body-parser'),
+    app = express();
+
+app.use(bodyParser.json());
+app.post('/', function(req, res){
+  madagascar(req.body.payload, function(responses) {
+    res.send(responses);
+  });
+});
+
+app.listen(3000);
+
+```
+
+```sh
+curl -d "`cat payload.json`" -H "Content-Type: application/json" http://localhost:3000/
+[{"status":200,"headers":{"server":"nginx"...
 ```
 
 # License
