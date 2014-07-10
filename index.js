@@ -1,3 +1,3 @@
-var madagascar = requre('./lib/madagascar');
+var madagascar = require('./lib/madagascar');
 
 module.exports = madagascar;
