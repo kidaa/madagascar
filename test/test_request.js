@@ -14,7 +14,7 @@ describe('#request', function() {
     request.send({
       url: 'http://local.olapic.com/hello',
       method: 'GET',
-      finish: function(response){
+      finish: function(index, response){
         response.should.to.like({
           status: 200,
           headers: {},
@@ -41,7 +41,7 @@ describe('#request', function() {
       url: 'http://local.olapic.com/media',
       method: 'POST',
       body: 'caption=%23madagascar&link=http%3A%2F%2Finstagram.com%2Fp%2FqMN-RWKc9U',
-      finish: function(response){
+      finish: function(index, response){
         response.should.to.like({
           status: 200,
           headers: {'content-type': 'application/json'},
