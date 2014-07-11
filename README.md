@@ -70,11 +70,19 @@ madagascar(payload, function(responses){
 var express = require('express'),
     madagascar = require('madagascar'),
     bodyParser = require('body-parser'),
-    app = express();
+    app = express(),
+    gate;
 
 app.use(bodyParser.json());
+
+gate = madagascar({
+  domains: {
+    baseUrl: 'https://api.olapic.com/'
+  }
+});
+
 app.post('/', function(req, res){
-  madagascar(req.body.payload, function(responses) {
+  gate(req.body, function(responses) {
     res.send(responses);
   });
 });
