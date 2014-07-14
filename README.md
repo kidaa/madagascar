@@ -14,15 +14,10 @@ $ npm install madagascar
 
 **`madagascar(config)`** in where *`config`* is an object that may contains
 
-- *string* `domains.baseUrl` … base url respect to which every relative url will
-	be taken. I.g., *"https://api.olapic.com/v1"*
-- *array* `domains.restrictTo` … list of allowed domains. If it's not present,
-	requests to any domain will be allowed. I.g., *["api.olapic.com"]*
-- *object* `defaultHeaders` … contains a set of default headers to be sent on
-	every request to the upstream API. I.g., *{"Accept": "application/json",
-	"Link": "&lt;/&gt;"}*
-- *int* `batchMaxSize` … *30* by default. Specifies the maximun amount of
-	request allowed on a single batch.
+- *string* `domains.baseUrl` … base url respect to which every relative url will be taken. I.g., *"https://api.olapic.com/v1"*
+- *array* `domains.restrictTo` … list of allowed domains. If it's not present, requests to any domain will be allowed. I.g., *["api.olapic.com"]*
+- *object* `defaultHeaders` … contains a set of default headers to be sent on every request to the upstream API. I.g., *{"Accept": "application/json", "Link": "&lt;/&gt;"}*
+- *int* `batchMaxSize` … *30* by default. Specifies the maximun amount of request allowed on a single batch.
 
 and returns an object containing:
 
@@ -31,24 +26,17 @@ and returns an object containing:
 where *`payload`* may have the following members
 
 - *string* `base_url` … acts in the same way as the `config.domains.baseUrl` does
-- *object* `authentication` … authentication object. It will be merged into the
-	query string of every request.
+- *object* `authentication` … authentication object. It will be merged into the query string of every request.
 - *array* `batch` … objects corresponding to a standar HTTP request
-  - *string* `relative_url` … relative to a *base_url* specified by this
-		payload or by config. I.g., *'/hello'*
-	- *string* `url` … must be fully qualified, I.g.,
-		'https://api.olapic.com/hello?count=2'. It supersedes to the the
-		*relative_url* parameter
+  - *string* `relative_url` … relative to a *base_url* specified by this payload or by config. I.g., *'/hello'*
+	- *string* `url` … must be fully qualified, I.g., 'https://api.olapic.com/hello?count=2'. It supersedes to the the *relative_url* parameter
   - *string* `method` … HTTP method like *'GET'*
   - *string* `body` … an url encoded body
-  - *object* headers … may contain any valid HTTP header in the form:
-		`{name: value}`. I.g., `{'Content-type': 'application/json'}`
+  - *object* headers … may contain any valid HTTP header in the form: `{name: value}`. I.g., `{'Content-type': 'application/json'}`
 
 and **`callback`** must be a **`function(response)`**, in where
 
- - `response` would be an array of response objects, in the corresponding order
-	to the *batch* received. Each of one should contain
-
+ - `response` would be an array of response objects, in the corresponding order to the *batch* received. Each of one should contain
 	- *int* `status` … HTTP status code
 	- *object* `headers` … response headers
 	- *string* `body` … response body
