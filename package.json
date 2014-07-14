@@ -13,7 +13,9 @@
   "keywords": [
     "restful",
     "api",
-    "http"
+    "http",
+    "bulk",
+    "wrapper"
   ],
   "author": "Carlos Viglietta <awaken.ar@gmail.com> (https://github.com/charly22)",
   "licenses": [
