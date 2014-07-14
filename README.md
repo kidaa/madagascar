@@ -29,17 +29,17 @@ where *`payload`* may have the following members
 - *object* `authentication` … authentication object. It will be merged into the query string of every request.
 - *array* `batch` … objects corresponding to a standar HTTP request
   - *string* `relative_url` … relative to a *base_url* specified by this payload or by config. I.g., *'/hello'*
-	- *string* `url` … must be fully qualified, I.g., 'https://api.olapic.com/hello?count=2'. It supersedes to the the *relative_url* parameter
+  - *string* `url` … must be fully qualified, I.g., 'https://api.olapic.com/hello?count=2'. It supersedes to the the *relative_url* parameter
   - *string* `method` … HTTP method like *'GET'*
   - *string* `body` … an url encoded body
   - *object* headers … may contain any valid HTTP header in the form: `{name: value}`. I.g., `{'Content-type': 'application/json'}`
 
 and **`callback`** must be a **`function(response)`**, in where
 
- - `response` would be an array of response objects, in the corresponding order to the *batch* received. Each of one should contain
-	- *int* `status` … HTTP status code
-	- *object* `headers` … response headers
-	- *string* `body` … response body
+- `response` would be an array of response objects, in the corresponding order to the *batch* received. Each of one should contain
+  - *int* `status` … HTTP status code
+  - *object* `headers` … response headers
+  - *string* `body` … response body
 
 # Usage
 
@@ -138,8 +138,8 @@ obtaining a copy of this software and associated documentation
 files (the "Software"), to deal in the Software without
 restriction, including without limitation the rights to use,
 copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the
 Software is furnished to do so, subject to the following
+copies of the Software, and to permit persons to whom the
 conditions:
 
 The above copyright notice and this permission notice shall be
