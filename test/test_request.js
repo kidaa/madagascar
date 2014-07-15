@@ -8,11 +8,11 @@ describe('#request', function() {
   it('responses with "Hello world" to a GET /hello', function(done) {
 
     api = nock("http://local.olapic.com")
-          .get("/hello")
+          .get("/hello?q=world")
           .reply(200, "Hello World");
 
     request.send({
-      url: 'http://local.olapic.com/hello',
+      url: 'http://local.olapic.com/hello?q=world',
       method: 'GET',
       finish: function(index, response){
         response.should.to.like({
