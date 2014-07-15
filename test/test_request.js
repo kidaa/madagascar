@@ -5,7 +5,7 @@ var chai = require('chai'),
     request = require('../lib/request');
 
 describe('#request', function() {
-  it('GET /hello responses "Hello World"', function(done) {
+  it('responses with "Hello world" to a GET /hello', function(done) {
 
     api = nock("http://local.olapic.com")
           .get("/hello")
@@ -26,9 +26,9 @@ describe('#request', function() {
     });
   });
 
-  it('POST /media returns "{id: /media/123abc}"', function(done) {
+  it('returns "{id: /media/123abc}" to a POST /media', function(done) {
 
-    api = nock('http://local.olapic.com')
+    api = nock('https://local.olapic.com')
       .post('/media', {
         caption: '#madagascar',
         link: 'http://instagram.com/p/qMN-RWKc9U'
@@ -38,7 +38,7 @@ describe('#request', function() {
       });
 
     request.send({
-      url: 'http://local.olapic.com/media',
+      url: 'https://local.olapic.com/media',
       method: 'POST',
       body: 'caption=%23madagascar&link=http%3A%2F%2Finstagram.com%2Fp%2FqMN-RWKc9U',
       finish: function(index, response){
@@ -46,6 +46,21 @@ describe('#request', function() {
           status: 200,
           headers: {'content-type': 'application/json'},
           body: '{\"id\":\"/media/123abc\"}'
+        });
+        done();
+        api.isDone();
+      }
+    });
+  });
+
+
+  it('responses with {status: 0} to a network issues', function(done) {
+    request.send({
+      url: 'http://localhost:1',
+      finish: function(index, response){
+        response.should.to.like({
+          status: 0,
+          err: "connect ECONNREFUSED"
         });
         done();
         api.isDone();
