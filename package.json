@@ -1,6 +1,6 @@
 {
   "name": "madagascar",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Madagascar wraps a bulk of HTTP requests, collect the responses and sends them back as one.",
   "main": "index.js",
   "scripts": {
