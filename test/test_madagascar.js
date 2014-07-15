@@ -130,4 +130,22 @@ describe('#madagascar', function() {
     });
   });
 
+
+  it('must fail when the batch is empty', function(done){
+    var payload,
+        entrance;
+
+    entrance = madagascar();
+
+    payload = {
+      batch: []
+    };
+
+    entrance(payload, function(responses){
+      responses.should.be.like({
+        error: 'Empty batch'
+      });
+      done();
+    });
+  });
 });
