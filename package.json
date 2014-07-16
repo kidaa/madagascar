@@ -34,8 +34,10 @@
     "chai-fuzzy": "~1.4.0"
   },
   "dependencies": {
-    "underscore-node": "~0.1.2",
-    "URIjs": "~1.13.2"
+    "URIjs": "~1.13.2",
+    "coveralls": "^2.11.1",
+    "mocha-lcov-reporter": "0.0.1",
+    "underscore-node": "~0.1.2"
   },
   "readmeFilename": "README.md",
   "gitHead": "bdfe8685fa9a4d4bc81fea579d07d74a1ac617b2",
